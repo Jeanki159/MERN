@@ -1,9 +1,10 @@
+require('dotenv').config();
 const app=require('./app');
-
+require ('./database.js');//Inicia la base de datos
 
 async function main() {
-    await  app.listen(4000); //Asíncrono 
+    await  app.listen(app.get('port')); //Asíncrono 
     console.log('server on port 4000');
 } //Función principal
 
-main()
+main() //Llama la funcion principal
